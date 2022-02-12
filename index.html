@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Debut modal-->
+    <div class="modal " id="regleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Régle du jeux</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <p>Chaque joueur possède un score temporaire de points et un score global.</p>
+                        <p>À chaque tour, le joueur a son compteur de points initialisé à 0 et peut 
+                            lancer le dé ( <img class="logo" 
+                            src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-dice-casino-kiranshastry-lineal-kiranshastry-1.png"/>
+                            ) autant de fois qu'il le souhaite. 
+                            Le résultat d’un lancer est ajouté au score temporaire.</p>
+                        <p>Lors de son tour, le joueur peut décider à tout moment de:
+                        <br>
+                        - Cliquer sur l’option ( <img class="logo" src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-download-interface-kiranshastry-solid-kiranshastry.png"/>
+                         ), qui permet d’envoyer les points temporaire vers le compteur global.
+                        Ce sera alors le tour de l’autre joueur.
+                        <br>
+                        - Lancer le dé. S’il obtient un 1, son score temporaire est perdu et c’est 
+                        la fin de son tour. Le premier joueur qui atteint les 100 points sur le 
+                        compteur global gagne le jeu.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de modal-->
+    <!--Container-->
+    <div class="container-fluid">
+        <!--Espace haut-->
+        <div class="spaceTop"></div>
+        <!--Espace du milieux-->
+        <div class="row">
+            <!--Espace de gauche-->
+            <div class="col-lg-2"></div>
+            <!--Zone du jeux-->
+            <div class="col-lg-8 col-12 centre">
+                <div class="row">
+                    <!--Btn nouvelle partie-->
+                    <div class="col-12 text-center ">
+                        <button class="btn btn-light btn-new m-2 ">
+                            <img class="logo" src="https://img.icons8.com/ios/50/000000/plus--v1.png"/> Nouvelle partie</button>
+                    </div>
+                    <!--Joueur 1-->
+                    <div class="col-6 player-0-panel text-center  rounded"> 
+                        <div class="m-5 p-5 player-0" id="player1">Joueur 1</div>
+                        <div class="counter-0" id="counter-0"></div>
+                        
+                        <div class="result shadow-lg rounded">
+                            <div>Points</div>
+                            <div class="score-0" id="score-0"></div>
+                        </div>
+                    </div>
+                    <!--Joueur 2-->
+                    <div class="col-6 player-1-panel text-center rounded">
+                        <div class="p-5 m-5 player-1" id="player2">Joueur 2</div>
+                        <div class="counter-1" id="counter-1"></div>
+                        
+                        <div class="result shadow-lg rounded">
+                            <div >Points</div>
+                            <div class="score-1" id="score-1" ></div>
+                        </div>
+                    </div>
+                    <!--Btn hold / roll / régle-->
+                    <div class="col-12">
+                        <div class="row ">
+                            <div class="col-6 text-center"> 
+                                <button class="btn btn-light btn-hold mt-2">
+                                    <img class="logo" src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-download-interface-kiranshastry-solid-kiranshastry.png"/>
+                                </button>
+                            </div>
+                            <div class="col-6 text-center">   
+                                <button class="btn btn-light btn-roll mt-2">
+                                    <img class="logo" src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-dice-casino-kiranshastry-lineal-kiranshastry-1.png"/>
+                                </button>
+                                <button type="button" data-toggle="modal" data-target="#regleModal" 
+                                class="btn btn-light btn-regle mt-2" >
+                                Régle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Espace droit-->
+            <div class="col-lg-2"></div>
+            <div class="image-fixed">
+                <img src="./image/dice-1.png" alt="dé" class="dice" id="dice">
+            </div>
+        </div>
+    </div>
+<script src="jquery-3.6.0.min.js"></script>
+<script src="bootstrap.bundle.min.js"></script>  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+<script src="script.js"></script>
+</body>
+</html>
